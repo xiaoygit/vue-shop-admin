@@ -1,0 +1,411 @@
+@mixin mixinWidth ($val) {
+    width: $val;
+}
+@mixin mixinHeight ($val) {
+    height: $val;
+}
+@mixin mixinMarginTop ($val) {
+    margin-top: $val;
+}
+@mixin mixinMarginRight ($val) {
+    margin-right: $val;
+}
+@mixin mixinMarginLeft ($val) {
+    margin-left: $val;
+}
+@mixin mixinMarginBottom ($val) {
+    margin-bottom: $val;
+}
+@mixin Padding ($val) {
+    padding: $val;
+}
+@mixin mixinPaddingTop ($val) {
+    padding-top: $val;
+}
+@mixin mixinPaddingRight ($val) {
+    padding-right: $val;
+}
+@mixin mixinPaddingBottom ($val) {
+    padding-bottom: $val;
+}
+@mixin mixinPaddingLeft ($val) {
+    padding-left: $val;
+}
+@mixin size ($val) {
+    font-size: $val;
+}
+.shrink {
+    flex-shrink: 0
+}
+.boxSizing {
+    box-sizing: border-box
+}
+
+/** width */
+.w-100 {
+    @include mixinWidth(100%);
+}
+.w-90 {
+    @include mixinWidth(90%);
+}
+.w-80 {
+    @include mixinWidth(80%);
+}
+.w-70 {
+    @include mixinWidth(70%);
+}
+.w-60 {
+    @include mixinWidth(60%);
+}
+.w-65 {
+    @include mixinWidth(65%);
+}
+.w-50 {
+    @include mixinWidth(50%);
+}
+.w-40 {
+    @include mixinWidth(40%);
+}
+.w-30 {
+    @include mixinWidth(30%);
+}
+.w-22 {
+    @include mixinWidth(22%);
+}
+.w-20 {
+    @include mixinWidth(20%);
+}
+
+.width-50 {
+    @include mixinWidth(50px);
+}
+.width-70 {
+    @include mixinWidth(70px);
+}
+.width-100 {
+    @include mixinWidth(100px);
+}
+.width-150 {
+    @include mixinWidth(150px);
+}
+.width-200 {
+    @include mixinWidth(200px);
+}
+.width-250 {
+    @include mixinWidth(250px);
+}
+.width-300 {
+    @include mixinWidth(300px);
+}
+.width-350 {
+    @include mixinWidth(350px);
+}
+.width-400 {
+    @include mixinWidth(400px);
+}
+
+/** height */
+.height100 {
+    @include mixinHeight(100vh);
+}
+.h-20 {
+    @include mixinHeight(20px);
+}
+.h-30 {
+    @include mixinHeight(30px);
+}
+.h-40 {
+    @include mixinHeight(40px);
+}
+.h-50 {
+    @include mixinHeight(50px);
+}
+.h-60 {
+    @include mixinHeight(60px);
+}
+.h-70 {
+    @include mixinHeight(70px);
+}
+.h-80 {
+    @include mixinHeight(80px);
+}
+.h-85 {
+    @include mixinHeight(85px);
+}
+.h-100 {
+    @include mixinHeight(100px);
+}
+.h-120 {
+    @include mixinHeight(120px);
+}
+.h-150 {
+    @include mixinHeight(150px);
+}
+.h-200 {
+    @include mixinHeight(200px);
+}
+.h-250 {
+    @include mixinHeight(250px);
+}
+.h-300 {
+    @include mixinHeight(300px);
+}
+
+/** margin */
+.mt-5 {
+    @include mixinMarginTop(5px);
+}
+.mt-10 {
+    @include mixinMarginTop(10px);
+}
+.mt-15 {
+    @include mixinMarginTop(15px);
+}
+.mt-20 {
+    @include mixinMarginTop(20px);
+}
+.mt-25 {
+    @include mixinMarginTop(25px);
+}
+.mt-30 {
+    @include mixinMarginTop(30px);
+}
+
+.ml-5 {
+    @include mixinMarginLeft(5px);
+}
+.ml-10 {
+    @include mixinMarginLeft(10px);
+}
+.ml-15 {
+    @include mixinMarginLeft(15px);
+}
+.ml-20 {
+    @include mixinMarginLeft(20px);
+}
+.ml-25 {
+    @include mixinMarginLeft(25px);
+}
+.ml-30 {
+    @include mixinMarginLeft(30px);
+}
+
+.mb-5 {
+    @include mixinMarginBottom(5px);
+}
+.mb-10 {
+    @include mixinMarginBottom(10px);
+}
+.mb-15 {
+    @include mixinMarginBottom(15px);
+}
+.mb-20 {
+    @include mixinMarginBottom(20px);
+}
+.mb-25 {
+    @include mixinMarginBottom(25px);
+}
+.mb-30 {
+    @include mixinMarginBottom(30px);
+}
+
+/** padding */
+.p-5 {
+    @include Padding(5px);
+    @extend .boxSizing;
+}
+.p-10 {
+    @include Padding(10px);
+    @extend .boxSizing;
+}
+.p-15 {
+    @include Padding(15px);
+    @extend .boxSizing;
+}
+.p-20 {
+    @include Padding(20px);
+    @extend .boxSizing;
+}
+
+.pt-5 {
+    @include mixinPaddingTop(5px);
+    @extend .boxSizing;
+}
+.pt-10 {
+    @include mixinPaddingTop(10px);
+    @extend .boxSizing;
+}
+.pt-15 {
+    @include mixinPaddingTop(15px);
+    @extend .boxSizing;
+}
+.pt-20 {
+    @include mixinPaddingTop(20px);
+    @extend .boxSizing;
+}
+
+.pl-5 {
+    @include mixinPaddingLeft(5px);
+    @extend .boxSizing;
+}
+.pl-10 {
+    @include mixinPaddingLeft(10px);
+    @extend .boxSizing;
+}
+.pl-15 {
+    @include mixinPaddingLeft(15px);
+    @extend .boxSizing;
+}
+.pl-20 {
+    @include mixinPaddingLeft(20px);
+    @extend .boxSizing;
+}
+
+/** size */
+.size-12 {
+    @include size(12px);
+}
+.size-14 {
+    @include size(14px);
+}
+.size-16 {
+    @include size(16px);
+}
+.size-18 {
+    @include size(18px);
+}
+.size-20 {
+    @include size(20px);
+}
+.size-22 {
+    @include size(22px);
+}
+.size-24 {
+    @include size(24px);
+}
+.size-26 {
+    @include size(26px);
+}
+.size-28 {
+    @include size(28px);
+}
+/** icon */
+.size-45 {
+    @include size(45px);
+}
+
+/** flex */
+.d-flex {
+    display: flex;
+}
+.between {
+    justify-content: space-between;
+}
+.around {
+    justify-content: space-around;
+}
+.wrap {
+    flex-wrap: wrap;
+}
+.center {
+    justify-content: center;
+}
+.align-item-center {
+    align-items: center;
+}
+.start {
+    justify-content: flex-start;
+}
+.end {
+    justify-content: flex-end;
+}
+// 纵向
+.cloumn {
+    flex-direction: column;
+}
+
+/** position */
+.relative {
+    position: relative;
+}
+.absolute {
+    position: absolute;
+}
+.center_h_w {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/** input */
+.outLine {
+    outline: none;
+}
+.border-none {
+    border: none;
+}
+.box-center {
+    margin: 0 auto;
+}
+
+/** text */
+.text-center {
+    text-align: center;
+}
+.weight {
+    font-weight: bold;
+}
+.letter {
+    letter-spacing: 5px;
+}
+
+/** border */
+.border {
+    border: 1px solid #ccc;
+}
+.border-r5 {
+    border-radius: 5px;
+}
+.border-r10 {
+    border-radius: 10px;
+}
+.border-r50 {
+    border-radius: 50%;
+}
+.overHidden {
+    overflow: hidden;
+}
+
+/** background */
+.background-white {
+    background-color: #fff;
+}
+
+.background-main {
+    background-color: #545C64;
+}
+.background-admin {
+    background-color: #282C34;
+}
+
+/** color */
+.white {
+    color: #fff;
+}
+.color-element {
+    color: #5CB6FF;
+}
+.color-element-danger {
+    color: #F56C6C;
+}
+.color-element-warning {
+    color: #E6A23C;
+}
+.color-element-success {
+    color: #67C23A;
+}
+
+/** pinter */
+.pointer {
+    cursor: pointer;
+}

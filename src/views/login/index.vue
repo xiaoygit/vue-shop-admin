@@ -45,6 +45,10 @@ export default {
                 if (error) return
                 login(values).then(res => {
                     console.log(res)
+                    if (res.data.status !== 200) return this.$message.error(res.data.message)
+                    this.$message.success(res.data.message)
+                    window.localStorage.setItem('token', res.data.token)
+                    this.$router.push({ path: '/home' })
                 })
             })
         }

@@ -15,9 +15,9 @@
                 </a-menu-item>
             </a-sub-menu>
         </a-menu>
-        <div class="w-100 p-10">
+        <div class="w-100 p-10 overHidden height100 containerBox">
             <div class="w-100">
-                <Header />
+                <Header v-if="$route.path !== '/home'" />
                 <Search v-if="$route.path !== '/home'" />
                 <div class="main" v-if="$route.path !== '/home'">
                     <router-view />
@@ -68,10 +68,27 @@ export default {
     background-color: rgba(238, 238, 238, 0.384);
 }
 .main {
-    height: 80vh;
-    // background-color: #fff;
+    height: 100%;
+    background-color: #fff;
 }
 .image {
     transform: translate(-20%, -50%);
+}
+.containerBox {
+    height: 100vh;
+    overflow-y: auto;
+}
+.containerBox::-webkit-scrollbar {
+    width: 2px;    
+}
+.containerBox::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    box-shadow: inset 0 0 5px rgba(99, 98, 98, 0.2);
+    background: rgba(105, 104, 104, 0.322);
+}
+.containerBox::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px rgba(119, 118, 118, 0.2);
+    border-radius: 0;
+    background: rgba(124, 123, 123, 0.411);
 }
 </style>

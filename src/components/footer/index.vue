@@ -9,5 +9,7 @@
 <style lang="scss" scoped>
 .container {
     left: 50%;
+    bottom: 0;
+    background-color: transparent;
 }
 </style>

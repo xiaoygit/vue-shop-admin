@@ -2,26 +2,24 @@
     <div class="container p-10">
         <div class="w-100">
             <a-button type="primary" class="mt-10 mb-15">添加新用户</a-button>
-            <a-table
+            <L-Table
                 :columns="columns"
-                :data-source="data"
-                style="width: 100%;"
-                :rowKey="record => record.id">
+                :dataSource="dataSource">
                 <span slot="action" slot-scope="text, record">
                     <a @click="edit(record.id)">编辑</a>
                     <a-divider type="vertical" />
                     <a>删除</a>
                 </span>
-                <span slot="customRenderAvatar" slot-scope="text, record">
-                    <span v-if="record.avatar === null">无</span>
-                    <span v-else>{{ record.avatar }}</span>
-                </span>
-                <span slot="customRenderStatus" slot-scope="text, record">
-                    <a-tag :color="record.status === 1 ? 'green' : 'red'">
-                        <span>{{ record.status === 1 ? '通过' : '禁用' }}</span>
+                <span slot="customRenderStatus" slot-scope="text">
+                    <a-tag :color="text.text === 1 ? 'green' : 'red'">
+                        <span @click="del(text)">{{ text.text === 1 ? '通过' : '禁用' }}</span>
                     </a-tag>
                 </span>
-            </a-table>
+                <span slot="customRenderAvatar" slot-scope="text">
+                    <span v-if="text.text === null">无</span>
+                    <span v-else>{{ text.text }}</span>
+                </span>
+            </L-Table>
         </div>
     </div>
 </template>
@@ -29,6 +27,7 @@
 <script>
 // 字段
 import { userList } from '@/api/user/index.js'
+import LTable from '../../components/LTable/index.vue'
 const columns = [
   {
     title: 'id',
@@ -38,32 +37,29 @@ const columns = [
   {
     title: '用户名',
     dataIndex: 'username',
-    key: 'username',
-    scopedSlots: { customRender: 'customRenderUsername' },
+    key: 'username'
   },
   {
     title: '头像',
     dataIndex: 'avatar',
     key: 'address',
-    scopedSlots: { customRender: 'customRenderAvatar' }
+    scopedSlots: { customRender: 'customRenderAvatar' },
   },
   {
     title: '手机号',
     key: 'phone',
-    dataIndex: 'phone',
-    scopedSlots: { customRender: 'customRenderPhone' },
+    dataIndex: 'phone'
   },
   {
     title: '真实姓名',
     key: 'realName',
-    dataIndex: 'realName',
-    scopedSlots: { customRender: 'customRenderRealName' },
+    dataIndex: 'realName'
   },
   {
     title: '账号状态',
     key: 'status',
     dataIndex: 'status',
-    scopedSlots: { customRender: 'customRenderStatus' },
+    scopedSlots: { customRender: 'customRenderStatus' }
   },
   {
     title: 'Action',
@@ -74,21 +70,26 @@ const columns = [
 export default {
     data () {
         return {
-            data: [],
+            dataSource: [],
             columns,
         }
     },
+    components: {
+        LTable
+    },
     created () {
         this.init()
-        console.log(this.data)
     },
     methods: {
         init () {
             userList().then(res => {
-                this.data = [...res.data.data]
+                this.dataSource = [...res.data.data]
             })
         },
-        edit () {}
+        edit () {},
+        del (record) {
+            console.log(record)
+        }
     }
 }
 </script>
